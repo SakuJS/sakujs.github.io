@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="../../../src/css/app.login.css">
     <!-- MicroCSS - css:micro.css -->
     <link rel="stylesheet" href="../../../src/css/micro.css/microcss.min.css">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body>
     <main>
@@ -43,11 +45,16 @@
                 <span class="text-muted" style="font-size: 17px;">Ir a la <a href="../../../">página principal</a></span>
             </center>
         </div>
+        <br>
         <div class="crd">
             <h4 class="text-muted">A Project made with <i class="fa-solid fa-heart" style="color:red; -webkit-text-stroke: 2px black; opacity: 40%;"></i> by: INovomiast</h4>
         </div>
+        <center>
+            <div id="error-display-red" style="display:none;" class="alert alert-dismissible alert-danger login-error">
+                <strong id="alert-str-txt">Oh! Parece que a habido un error!</strong> <span id="error-type"></span>
+            </div>
+        </center>
     </main>
-
 
     <script>
         const input = document.getElementById('floatingInput');
@@ -55,13 +62,60 @@
         const prg_text = document.getElementById('progress-text');
         const form_block_submit = document.getElementById('form-block-submit');
 
+        function showError(type) {
+            const error_disp = document.getElementById('error-display-red');
+            const errors = ["empty-login", "nan-userid", "connection", "sdown", "test"];
+            const e_disp = document.getElementById('error-type');
+            const astxt = document.getElementById('alert-str-txt');
+
+            if (type == errors[0]) {
+                error_disp.style.display = 'block';
+                error_disp.style.animation = 'showup .5s ease-in';
+                e_disp.innerText = "El campo de inicio de sesión no puede estar vacio.";
+                e_disp.style.textDecoration = 'underline white';
+                setTimeout(() => {
+                    error_disp.style.display = 'none';
+                    e_disp.innerText = "";
+                }, 3500);
+
+            } else if (type == errors[1]) {
+                error_disp.style.display = 'block';
+                error_disp.classList = 'alert alert-dismissible alert-warning login-error'
+                error_disp.style.animation = 'showup .5s ease-in';
+                e_disp.innerText = "La ID del Usuario no es existente o es incorrecta.";
+                e_disp.style.textDecoration = 'underline white';
+                setTimeout(() => {
+                    error_disp.style.display = 'none';
+                    e_disp.innerText = "";
+                }, 3500);
+            } else if (type == errors[2]) {
+
+            } else if (type == errors[3]) {
+
+            } else if (type == errors[4]) {
+                astxt.innerText = "Exitosamente!";
+                error_disp.style.display = 'block';
+                error_disp.classList = 'alert alert-dismissible alert-success login-error'
+                error_disp.style.animation = 'showup .5s ease-in';
+                e_disp.innerText = "El Usuario ha iniciado session correctamente.";
+                e_disp.style.textDecoration = 'underline white';
+                setTimeout(() => {
+                    error_disp.style.display = 'none';
+                    e_disp.innerText = "";
+                }, 3500);
+            }
+
+        }
+
         form_block_submit.addEventListener('click', () => {
             if (input.value != "") {
                 if (input.value == "70e9b9d1-3eab-4020-b22e-1feed067f6fc") {
-                    alert(`Login Was Succesfull with: ${input.value}`);
+                    showError('test');
+                } else {
+                    showError('nan-userid');
                 }
             } else {
-                alert('Input no puede estar vacio!!');
+                showError('empty-login');
             }
         });
 
