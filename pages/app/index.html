@@ -1,7 +1,15 @@
 <script src="../../src/js/data/session/sess.js"></script>
 
 <script>
-    if(getCookie('session_id') == "") {
-        window.location.href = './login/';
+    const qString = window.location.search;
+    const URLParams = new URLSearchParams(qString);
+    const action = URLParams.get('action');
+
+    if(action == "enroll") {
+        window.location.href = './enroll/';
+    }else {        
+        if(getCookie('session_id') == "") {
+            window.location.href = './login/';
+        }
     }
 </script>

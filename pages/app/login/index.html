@@ -31,7 +31,7 @@
                 <label for="floatingInput">Identificador de Usuario</label>
             </div>
             <center>
-                <div class="mb-3 loader" style="display:none">
+                <div class="mb-3 loader" style="display:none" id="loader">
                     <br>
                     <span class="spinner-border spinner-border-lg text-primary"></span>
                     <br>
@@ -47,5 +47,24 @@
             <h4 class="text-muted">A Project made with <i class="fa-solid fa-heart" style="color:red; -webkit-text-stroke: 2px black; opacity: 40%;"></i> by: INovomiast</h4>
         </div>
     </main>
+
+
+    <script>
+        const input = document.getElementById('floatingInput');
+        const loader = document.getElementById('loader');
+        const prg_text = document.getElementById('progress-text');
+        const form_block_submit = document.getElementById('form-block-submit');
+
+        form_block_submit.addEventListener('click', () => {
+            if (input.value != "") {
+                if (input.value == "70e9b9d1-3eab-4020-b22e-1feed067f6fc") {
+                    alert(`Login Was Succesfull with: ${input.value}`);
+                }
+            } else {
+                alert('Input no puede estar vacio!!');
+            }
+        });
+
+    </script>
 </body>
 </html>
