@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - SakuJS App</title>
+    <!-- Bootswatch Theme -->
+    <link rel="stylesheet" href="https://bootswatch.com/5/litera/bootstrap.css">
+    <!-- Data:Session:UserData -->
+    <script src="" type="javascript"></script>
+    <!-- Data:Users:IDENTIFYERS -->
+    <script src="" type="javascript"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Favicon - Static:images:logo -->
+    <link rel="shortcut icon" href="../../../src/static/images/logo/sjs-logo-100x100.png" type="image/x-icon">
+    <!-- Fontawesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Custom Homepage CSS - css:app:login -->
+    <link rel="stylesheet" href="../../../src/css/app.login.css">
+    <!-- MicroCSS - css:micro.css -->
+    <link rel="stylesheet" href="../../../src/css/micro.css/microcss.min.css">
+</head>
+<body>
+    <main>
+        <div class="form-control centrado-por-cojones" style="width:500px;">
+            <h3>Identificarse en SakuJS</h3>
+            <div class="form-floating mb-3" style="display: block;" id="form-block">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Identificador de Usuario</label>
+            </div>
+            <center>
+                <div class="mb-3 loader" style="display:none">
+                    <br>
+                    <span class="spinner-border spinner-border-lg text-primary"></span>
+                    <br>
+                    <span class="text-muted" id="progress-text">Cargando recursos...</span>
+                </div>
+            </center>
+            <button class="btn btn-primary" style="display: block;" id="form-block-submit">Identificarme</button>
+            <center>
+                <span class="text-muted" style="font-size: 17px;">Ir a la <a href="../../../">página principal</a></span>
+            </center>
+        </div>
+        <div class="crd">
+            <h4 class="text-muted">A Project made with <i class="fa-solid fa-heart" style="color:red; -webkit-text-stroke: 2px black; opacity: 40%;"></i> by: INovomiast</h4>
+        </div>
+    </main>
+</body>
+</html>

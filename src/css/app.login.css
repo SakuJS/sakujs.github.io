@@ -1,0 +1,27 @@
+body {
+    background: url('../static/images/content/header-blurred.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.centrado-por-cojones {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid black;
+}
+
+.crd {
+    margin: 0;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* @media only screen and (max-width: 680px) {
+    .centrado-por-cojones {
+
+    }
+} */
