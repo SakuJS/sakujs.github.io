@@ -8,8 +8,10 @@
     if(action == "enroll") {
         window.location.href = './enroll/';
     }else {        
-        if(getCookie('session_id') == "") {
+        if(getCookie('secret') == "") {
             window.location.href = './login/';
+        } else if(getCookie('secret') != "") {
+            window.location.href = './dashboard';
         }
     }
 </script>

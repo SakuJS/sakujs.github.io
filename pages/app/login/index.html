@@ -7,10 +7,6 @@
     <title>Login - SakuJS App</title>
     <!-- Bootswatch Theme -->
     <link rel="stylesheet" href="https://bootswatch.com/5/litera/bootstrap.css">
-    <!-- Data:Session:UserData -->
-    <script src="" type="javascript"></script>
-    <!-- Data:Users:IDENTIFYERS -->
-    <script src="" type="javascript"></script>
     <!-- Bootstrap JavaScript -->
     <script src="https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Favicon - Static:images:logo -->
@@ -56,69 +52,7 @@
         </center>
     </main>
 
-    <script>
-        const input = document.getElementById('floatingInput');
-        const loader = document.getElementById('loader');
-        const prg_text = document.getElementById('progress-text');
-        const form_block_submit = document.getElementById('form-block-submit');
-
-        function showError(type) {
-            const error_disp = document.getElementById('error-display-red');
-            const errors = ["empty-login", "nan-userid", "connection", "sdown", "test"];
-            const e_disp = document.getElementById('error-type');
-            const astxt = document.getElementById('alert-str-txt');
-
-            if (type == errors[0]) {
-                error_disp.style.display = 'block';
-                error_disp.style.animation = 'showup .5s ease-in';
-                e_disp.innerText = "El campo de inicio de sesión no puede estar vacio.";
-                e_disp.style.textDecoration = 'underline white';
-                setTimeout(() => {
-                    error_disp.style.display = 'none';
-                    e_disp.innerText = "";
-                }, 3500);
-
-            } else if (type == errors[1]) {
-                error_disp.style.display = 'block';
-                error_disp.classList = 'alert alert-dismissible alert-warning login-error'
-                error_disp.style.animation = 'showup .5s ease-in';
-                e_disp.innerText = "La ID del Usuario no es existente o es incorrecta.";
-                e_disp.style.textDecoration = 'underline white';
-                setTimeout(() => {
-                    error_disp.style.display = 'none';
-                    e_disp.innerText = "";
-                }, 3500);
-            } else if (type == errors[2]) {
-
-            } else if (type == errors[3]) {
-
-            } else if (type == errors[4]) {
-                astxt.innerText = "Exitosamente!";
-                error_disp.style.display = 'block';
-                error_disp.classList = 'alert alert-dismissible alert-success login-error'
-                error_disp.style.animation = 'showup .5s ease-in';
-                e_disp.innerText = "El Usuario ha iniciado session correctamente.";
-                e_disp.style.textDecoration = 'underline white';
-                setTimeout(() => {
-                    error_disp.style.display = 'none';
-                    e_disp.innerText = "";
-                }, 3500);
-            }
-
-        }
-
-        form_block_submit.addEventListener('click', () => {
-            if (input.value != "") {
-                if (input.value == "70e9b9d1-3eab-4020-b22e-1feed067f6fc") {
-                    showError('test');
-                } else {
-                    showError('nan-userid');
-                }
-            } else {
-                showError('empty-login');
-            }
-        });
-
-    </script>
+    <script src="../../../src/js/data/session/sess.js"></script>
+    <script src="../../../src/js/data/users/id.js"></script>
 </body>
 </html>
