@@ -49,6 +49,11 @@ function showError(type) {
 }
 
 
+function getUser(authkey, data  ) {
+    const user = data.userdata.find(user => user.authkey === authkey);
+    return console.log(user);
+}
+
 async function getAPI(dir) {
     fetch(dir, {
         mode: "cors"
@@ -60,10 +65,11 @@ async function getAPI(dir) {
                 for (var x in data.userdata) {
                     var usrdata = data.userdata[x];
                     if (usrdata.authkey.includes(input.value)) {
-                        console.log("Exists!");
-                        document.cookie = "secret=" + input.value + "; path=/";
-                    } else if (!usrdata.authkey.includes(input.value)) {
-                        showError('nan-userid');
+                        getUser(input.value, data);
+                        showError('test');
+                        // document.cookie = "secret=" + input.value + "; path=/";
+                    } else {
+                        //pass
                     }
                 }
             } else {
@@ -73,12 +79,14 @@ async function getAPI(dir) {
     });
 }
 
-document.body.onload = () => {
-    if (getCookie('secret')) {
-        window.location.href = "../dashboard/";
-    }else {
-        //pass
-    }
-}
+getAPI('/src/js/data/users/data.json')
+
+// document.body.onload = () => {
+//     if (getCookie('secret')) {
+//         window.location.href = "../dashboard/";
+//     }else {
+//         //pass
+//     }
+// }
 
 //http://sakujs.byethost11.com/data/users/index.json

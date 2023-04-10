@@ -4,19 +4,61 @@
             "username": "TestUser",
             "email": "johndoe@domain.com",
             "authkey": "de79e6bb-3f99-4a75-8462-e3299a25ea9f",
-            "level": 0
+            "level": 0,
+            "badges": [
+                {
+                    "name": "Test Badge 1",
+                    "date": "01/01/1990"
+                },
+                {
+                    "name": "Test Badge 2",
+                    "date": "02/02/1990"
+                },
+                {
+                    "name": "Test Badge 3",
+                    "date": "03/03/1990"
+                }
+            ]
         },
         {
             "username": "TestUser2",
             "email": "johndoe2@domain.com",
             "authkey": "f5b639e5-348c-40b7-a014-70b076d313f8",
-            "level": 0
+            "level": 0,
+            "badges": [
+                {
+                    "name": "Test Badge 1",
+                    "date": "01/01/1990"
+                },
+                {
+                    "name": "Test Badge 2",
+                    "date": "02/02/1990"
+                },
+                {
+                    "name": "Test Badge 3",
+                    "date": "03/03/1990"
+                }
+            ]
         },
         {
             "username": "TestUser3",
             "email": "johndoe3@domain.com",
             "authkey": "16bf6603-7358-4f04-89b6-eb8f0eba4203",
-            "level": 0
+            "level": 0,
+            "badges": [
+                {
+                    "name": "Test Badge 1",
+                    "date": "01/01/1990"
+                },
+                {
+                    "name": "Test Badge 2",
+                    "date": "02/02/1990"
+                },
+                {
+                    "name": "Test Badge 3",
+                    "date": "03/03/1990"
+                }
+            ]
         }
     ],
     "courses": [
