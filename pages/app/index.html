@@ -1,17 +1,23 @@
-<script src="../../src/js/data/session/sess.js"></script>
-
-<script>
-    const qString = window.location.search;
-    const URLParams = new URLSearchParams(qString);
-    const action = URLParams.get('action');
-
-    if(action == "enroll") {
-        window.location.href = './enroll/';
-    }else {        
-        if(getCookie('secret') == "") {
-            window.location.href = './login/';
-        } else if(getCookie('secret') != "") {
-            window.location.href = './dashboard';
-        }
-    }
-</script>
+<html>
+    <head></head>
+    <body>
+        <script src="../../src/js/data/session/sess.js"></script>
+        <script src="../../src/js/libs/chk.min.js"></script>
+        
+        <script>
+            const qString = window.location.search;
+            const URLParams = new URLSearchParams(qString);
+            const action = URLParams.get('action');
+        
+            if(action == "enroll") {
+                window.location.href = './enroll/';
+            }else {        
+                if(chkjs.chkC('authkey')) {
+                    //pass
+                } else {
+                    window.location.href = './login/';
+                }
+            }
+        </script>
+    </body>
+</html>

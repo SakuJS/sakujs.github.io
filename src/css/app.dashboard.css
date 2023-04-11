@@ -1,0 +1,170 @@
+/* Estilos para el cuerpo del documento */
+
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    margin: 0;
+    background-color: #222;
+    color: #fff;
+    background: url('https://raw.githubusercontent.com/SakuJS/sakujs.github.io/main/src/static/images/content/header-blurred.jpg') no-repeat center center fixed;
+    background-size: cover;
+    overflow-x:hidden;
+}
+  
+/* Estilos para el encabezado */
+  
+.dashboard-header {
+    background-color: #2f2f2f;
+    border-radius: 20px;
+    padding: 20px;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px; /* Agregamos un margen superior de 20px */
+}
+  
+.profile-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+  
+.profile-picture {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+}
+  
+.profile-name {
+    display: flex;
+    flex-direction: column;
+}
+  
+.text-muted {
+    color: #999;
+}
+  
+.level-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+  
+.level-box {
+    background-color: #424242;
+    border-radius: 10px;
+    padding: 10px;
+    margin-right: 20px;
+}
+  
+.xp-info {
+    color: #999;
+}
+  
+.badge-info, .followers-info {
+    background-color: #424242;
+    border-radius: 10px;
+    padding: 10px;
+    margin-right: 20px;
+}
+  
+.karma-info {
+    color: #999;
+}
+  
+  
+/* Estilos para el contenido principal */
+  
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+  
+.card {
+    background-color: #333;
+    background-image: url('https://oracle-devrel.github.io/devo-image-repository/seo-thumbnails/JavaScript---Thumbnail-1200-x-630.jpg');
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+    transition: transform 0.3s ease;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+}
+  
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1),
+                0px 8px 12px 2px #4ed6e086,
+                0px 12px 18px 5px #d642ff77,
+                0px 16px 24px 8px #fed97560;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+  
+.card h2 {
+    margin: 0 0 10px 0;
+    font-size: 20px;
+    color: #fff;
+}
+  
+.card ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+  
+.card li {
+    margin-bottom: 10px;
+}
+  
+.card li:last-child {
+    margin-bottom: 0;
+}
+  
+.card h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #fff;
+}
+  
+.card p {
+    margin: 0;
+    color: #999;
+    font-size: 14px;
+}
+
+.author {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding: 10px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.sep {
+    margin-left: 15px;
+}
+
+/* Estilos para el pie de página */
+  
+footer {
+    background-color: #4444447d;
+    text-align: center;
+    padding: 10px 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+  
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
