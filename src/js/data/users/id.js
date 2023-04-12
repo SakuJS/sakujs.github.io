@@ -87,7 +87,7 @@ async function getAPI(dir) { //Funcion para obtener datos del archivo skjs.users
                     var usrdata = data.userdata[x]; //Resultado almacenado en la variable usrdata al hacer la iteracion.
                     if (usrdata.authkey.includes(input.value)) { //Comprobar que el valor del input se encuentre en una lista de Authkeys
                         var usrdat = getUser(input.value, data); //getUser para relacionar el AuthKey con todo el objeto.
-                        genCookies(['username', 'authkey', 'level', 'usertype'], [usrdat["username"], usrdat["authkey"], usrdat["level"], usrdat["usertype"]]); //Cookies a Generar
+                        genCookies(['username', 'alias', 'authkey', 'level', 'usertype'], [usrdat["username"], usrdat["alias"], usrdat["authkey"], usrdat["level"], usrdat["usertype"]]); //Cookies a Generar
                         showError('success'); //ShowErrorSuccess: Cartelito mostrado al momento de ser un login exitoso.
                         chkjs.chkC('authkey'); //FinishAuth: Funcion la cual termina la autentificacion.
                     } else {
@@ -105,7 +105,9 @@ getAPI('https://raw.githubusercontent.com/SakuJS/api/main/v1/skjs.users.json');
 
 
 document.body.onload = () => {
-
+    if(getCookie('authkey') != "") {
+        chkjs.redir('../dashboard/');
+    }
 }
 
 //http://sakujs.byethost11.com/data/users/index.json
