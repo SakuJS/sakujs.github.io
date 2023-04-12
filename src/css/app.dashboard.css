@@ -164,7 +164,6 @@ footer {
 }
 
 /*Detalles Extra*/
-
 .pill {
     color: #fff;
     padding: 0.25rem 0.5rem;
@@ -188,7 +187,31 @@ footer {
 .pill-maintenance {
     background-color: #E53935;
 }
-  
+ 
+/*Select Filtros*/
+.custom-select {
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+    
+}
+
+
+/*Footer*/
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+ 
+@media screen and (max-width: 767px) {
+    footer {
+       position: static;
+       margin-top: 20px; /* Ajustar la distancia desde el contenido */
+    }
+}
 footer p {
     margin: 0;
     font-size: 14px;

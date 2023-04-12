@@ -87,7 +87,7 @@ async function getAPI(dir) { //Funcion para obtener datos del archivo skjs.users
                     var usrdata = data.userdata[x]; //Resultado almacenado en la variable usrdata al hacer la iteracion.
                     if (usrdata.authkey.includes(input.value)) { //Comprobar que el valor del input se encuentre en una lista de Authkeys
                         var usrdat = getUser(input.value, data); //getUser para relacionar el AuthKey con todo el objeto.
-                        genCookies(['username', 'alias', 'authkey', 'level', 'usertype'], [usrdat["username"], usrdat["alias"], usrdat["authkey"], usrdat["level"], usrdat["usertype"]]); //Cookies a Generar
+                        genCookies(['username', 'alias', 'authkey', 'level', 'usertype', 'followers', 'karma', 'badges'], [usrdat["username"], usrdat["alias"], usrdat["authkey"], usrdat["level"], usrdat["usertype"], usrdat.profile_data["followers"], usrdat.profile_data["karma"], usrdat.badges.length]); //Cookies a Generar
                         showError('success'); //ShowErrorSuccess: Cartelito mostrado al momento de ser un login exitoso.
                         chkjs.chkC('authkey'); //FinishAuth: Funcion la cual termina la autentificacion.
                     } else {
