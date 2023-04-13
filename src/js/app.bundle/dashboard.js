@@ -10,22 +10,26 @@ async function getCourses(url) {
             var skjs_courses = data.courses[i];
             const main_content = document.querySelector('main');
             var card = `
-                <div id="card-${i}" class="card" style="background-image: url('${skjs_courses.thumbnail}'); filter: none;">
-                    <h2>${skjs_courses.name}</h2>
-                    <ul>
-                    <li><strong>Fecha de creación:</strong> ${skjs_courses.release}</li>
-                    </ul>
-                    <p class="author">Autor: ${skjs_courses.author}</p>
-                    <span class="pill pill-${skjs_courses.tag}">${skjs_courses.state}</span>
-                </div>
+                <a href="/courses/${skjs_courses.cid}" style="color: white; text-decoration: none;">
+                    <div id="card-${i}" class="card" style="background-image: url('${skjs_courses.thumbnail}'); filter: none;">
+                        <div id="progress-fill" style="z-index: 0;"><h3>0%</h3></div>
+                        <div class="cinfo">
+                            <h2 style="z-index:1;">${skjs_courses.name}</h2>
+                            <ul>
+                            <li><strong>Fecha de creación:</strong> ${skjs_courses.release}</li>
+                            </ul>
+                        </div>
+                        <p class="author">Autor: ${skjs_courses.author}</p>
+                        <span class="pill pill-${skjs_courses.tag}">${skjs_courses.state}</span>
+                    </div>
+                </a>
             `;
             const courses_div = document.createElement('div');
             courses_div.innerHTML = card;
             main_content.appendChild(courses_div);
 
-            document.getElementById(`card-${i}`).addEventListener('click', () => {
-                window.location.href = `https://sakujs.github.io/courses/${skjs_courses.cid}`;
-            });
+            const progress = document.getElementById('progress-fill');
+            progress.style.height = "0";
 
         }
     });
