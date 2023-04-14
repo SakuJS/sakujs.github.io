@@ -71,7 +71,7 @@ const genCookies = (cnames = [], cvalues = []) => {
     for (let i = 0; i < cnames.length; i++) {
       const cname = cnames[i];
       const cvalue = cvalues[i];
-      document.cookie = `${cname}=${cvalue}; path=/`;
+      document.cookie = `${cname}=${cvalue}; path=/; Secure`;
     }
 }
 
